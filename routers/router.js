@@ -36,7 +36,7 @@ airchat.get('/allPosts',verifyToken,allPosts)
 //             res.send('error: ' + err)
 //         })
 // })
-airchat.get('/allPosts',verifyToken,(req,res)=>{
+airchat.post('/createPosts',verifyToken,(req,res)=>{
     jwt.verify(req.token,process.env.SECRET_KEY,(err,authData)=>{
         if(err){
             res.sendStatus(403);
